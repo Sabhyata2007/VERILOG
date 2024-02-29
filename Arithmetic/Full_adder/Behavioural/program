@@ -1,1 +1,20 @@
-
+`timescale 1ns / 1ps
+module full_adder(
+    input [2:0] i,
+    output [1:0] o
+    );
+    reg [1:0]o;
+always @(*)
+begin 
+ if (i[0]==1'b0)
+   begin
+     o[0]= i[1]^i[2];
+     o[1]= i[1]&i[2];
+   end 
+  else
+    begin
+      o[0]= ~(i[1]^i[2]);
+     o[1]= i[1]|i[2];
+    end 
+end
+endmodule
