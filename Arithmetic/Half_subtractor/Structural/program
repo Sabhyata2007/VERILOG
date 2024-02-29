@@ -1,1 +1,13 @@
+`timescale 1ns / 1ps
+module half_subtractor(
+    input a,
+    input b,
+    output d,
+    output bo
+    );
+    wire w1;
+    xor xor_gate(d,a,b);
+    not not_gate(w1,a);
+    and and_gate(bo,w1,b);
+endmodule
 
