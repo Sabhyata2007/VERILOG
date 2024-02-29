@@ -1,1 +1,22 @@
-
+`timescale 1ns / 1ps
+module half_subtractor(
+    input a,
+    input b,
+    output d,
+    output bo
+    );
+    reg d, bo;
+    always @(*)
+    begin 
+      if (a==1'b0)
+        begin 
+          d=b;
+          bo=b;
+         end
+      else
+        begin
+        d= ~b;
+        bo= 1'b0;
+        end 
+      end 
+endmodule
