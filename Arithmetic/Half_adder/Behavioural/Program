@@ -1,1 +1,22 @@
-
+`timescale 1ns / 1ps
+module half_adder(
+    input a,
+    input b,
+    output s,
+    output c
+    );
+reg s,c;
+always @(*)
+ begin
+    if (a==1'b1 )
+    begin
+        s= ~b;
+        c= b;
+    end 
+    else 
+    begin
+         s=b;
+         c=1'b0;
+    end
+   end     
+endmodule
